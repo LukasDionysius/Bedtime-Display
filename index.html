@@ -16,21 +16,13 @@
   </head>
 
   <body>
-    <script>
-    console.log(getESTHours())
-    console.log(getCurrentDay())
-    console.log(getCurrentMonth())
-    console.log(getCurrentYear())
-    console.log(getFullDate())
-
-    </script>
 
     <div class="container">
 
       <div class="row">
         <div class="col-4">
-          <div id="time"></div>
-          <h2>DATE</h2>
+          <h1><div id="currentTime"></div></h1>
+          <h3><div id="currentDate"></div></h3>
         </div>
         <div class="col-4">
           <h2>WEATHER</h2>
@@ -57,6 +49,12 @@
       </div>
 
     </div> <!-- End Container -->
+
+
+    <script>
+      updateDate()
+      updateTime()
+    </script>
 
   </body>
 

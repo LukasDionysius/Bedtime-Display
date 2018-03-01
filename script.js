@@ -1,8 +1,13 @@
-function getESTHours() {
+function getESTHoursMin() {
     var d = new Date();
-	d = d.getHours();
+    var m = new Date();
 
-    if(d==13){
+	d = d.getHours();
+	m = m.getMinutes();
+
+    if(d==12){
+    	d = 12;
+    } else if(d==13){
     	d = 1;
     } else if(d==14){
     	d = 2;
@@ -28,7 +33,29 @@ function getESTHours() {
     	d = 12;
     }
 
-    return d;
+    if(m==0){
+    	m = "00";
+    } else if(m==1){
+    	m = "01";
+    } else if(m==2){
+    	m = "02";
+    } else if(m==3){
+    	m = "03";
+    } else if(m==4){
+    	m = "04";
+    } else if(m==5){
+    	m = "05";
+    } else if(m==6){
+    	m = "06";
+    } else if(m==7){
+    	m = "07";
+    } else if(m==8){
+    	m = "08";
+    } else if(m==9){
+    	m = "09";
+    }
+
+    return d + ":" + m;
 }
 
 function getCurrentDay() {
@@ -95,7 +122,24 @@ function getCurrentYear() {
 
 function getFullDate() {
 	var date = new Date();
-    var date = getCurrentDay() + " " + getCurrentMonth() + " " + date.getDate() + ", " + getCurrentYear()
+    var date = getCurrentDay() + "<br> " + getCurrentMonth() + " " + date.getDate() + ", " + getCurrentYear();
 
     return date;
+}
+
+function getFullTime() {
+	var time = new Date();
+    var time = getESTHoursMin();
+
+    return time;
+}
+
+function updateDate() {
+    var date = getFullDate();
+    document.getElementById("currentDate").innerHTML = date;
+}
+
+function updateTime() {
+    var time = getFullTime()
+    document.getElementById("currentTime").innerHTML = time;
 }
