@@ -5,7 +5,9 @@ function getESTHoursMin() {
 	d = d.getHours();
 	m = m.getMinutes();
 
-    if(d==12){
+	if(d==0){
+    	d = 12;
+    } else if(d==12){
     	d = 12;
     } else if(d==13){
     	d = 1;
