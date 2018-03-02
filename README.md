@@ -8,9 +8,13 @@ Bedtime Display is a heads-up-display that mirrors your notifications, news, and
 
 ## Built with
 ### Hardware
-HDMI Projector
+- Raspberry Pi 3
+- DeepLee Projector: https://www.amazon.com/gp/product/B01EOXLC5K/ref=oh_aui_detailpage_o01_s00?ie=UTF8&psc=1
 
 ### Software / API
-...
+- Rasbian Jessie
+- OpenWeathMap API
+- CryptoCompare API
+- NewsAPI API
 
 # Work in Progress
