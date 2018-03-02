@@ -1,16 +1,31 @@
+var formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+  // the default value for minimumFractionDigits depends on the currency
+  // and is usually already 2
+});
+
 function getBTCPrice(){
-	var url = "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=BTC&tsyms=USD";
+	var url = "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=BTC,USD,EUR";
 	$.getJSON(url, function(data) {
 
-		var dataJSON = data.JSON;
-		var dataRAW = data.dataJSON;
-		var dataBTC = data.dataRAW;
-		var dataUSD = data.dataBTC;
-		var price = dataUSD[PRICE];
+		var USD = data["USD"];
+		USD = formatter.format(USD);
+		console.log(USD);
 
-		console.log(price);
-		//var weatherConditions = data.weather[0]['description'];
+		document.getElementById("BTCPrice").innerHTML = "BTC: " + USD;
+	});
+}
 
-		//document.getElementById("villanovaWeatherConditions").innerHTML = weatherConditions;
+function getETHPrice(){
+	var url = "https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=BTC,USD,EUR";
+	$.getJSON(url, function(data) {
+
+		var USD = data["USD"];
+		USD = formatter.format(USD);
+		console.log(USD);
+
+		document.getElementById("ETHPrice").innerHTML = "ETH: " + USD;
 	});
 }
