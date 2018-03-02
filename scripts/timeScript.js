@@ -76,7 +76,7 @@ function getCurrentDay() {
     	d = "Thursday";
     } else if(d==5){
     	d = "Friday";
-    } else if(d==5){
+    } else if(d==6){
     	d = "Saturday";
     } 
 
