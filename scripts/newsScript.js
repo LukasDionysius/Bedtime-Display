@@ -5,7 +5,7 @@ function getTopNewsHeadlines(){
 		var articles = data.articles;
 		var articleHeadlines;
 
-		for (i = 0; i < 4; i++) {
+		for (i = 0; i < 3; i++) {
     		var title = articles[i]["title"];
 
     		if (i == 0){
