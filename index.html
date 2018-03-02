@@ -13,7 +13,9 @@
     <link href="grid.css" rel="stylesheet"> 
 
     <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script type="text/javascript" src="./script.js"></script>
+    <script type="text/javascript" src="./weatherScript.js"></script>
+    <script type="text/javascript" src="./timeScript.js"></script>
+    <script type="text/javascript" src="./cryptoScript.js"></script>
 
   </head>
 
@@ -30,7 +32,7 @@
         </div>
         <div class="col-4">
           <h2><div id="villanovaWeatherConditions"></div></h2>
-          <h2><div id="villanovaWeatherTemperature"></div></h2>
+          <h2><div id="villanovaWeatherTemperature"><br></div></h2>
         </div>
         <div class="col-4">
           <h3></h3>
@@ -63,6 +65,7 @@
       updateDate();
       getVillanovaWeatherConditions();
       getVillanovaWeatherTemperature();
+      getBTCPrice();
 
       var myVar = setInterval(function(){ updateTime() }, 1000);
       var myVar = setInterval(function(){ updateDate() }, 1000000);
